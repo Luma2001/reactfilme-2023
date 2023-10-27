@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       <h1>React</h1>
-      <h3>Prueba de vercel</h3>
+      <h3>Prueba de deploye</h3>
     </div>
   )
 }
