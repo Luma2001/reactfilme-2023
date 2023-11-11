@@ -1,12 +1,25 @@
 import React from 'react'
+import { RouterProvider } from 'react-router-dom'
+import { appRouter } from './core/routers/app_router'
+import RootProvider from './core/providers/root_provider';
 
+
+//
 const App = () => {
   return (
-    <div>
-      <h1>React Netflix</h1>
-      <h3>Esto es para que mi QA haga los testing</h3>
-    </div>
-  )
-}
+    <>
 
-export default App
+    <RootProvider>
+    
+            <RouterProvider router={appRouter} />
+            
+   </RootProvider>
+   
+   
+     
+    </>
+    
+  );
+};
+
+export default App;
