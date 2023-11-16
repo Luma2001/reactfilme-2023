@@ -1,19 +1,21 @@
-class AppStorage {
+export class AppStorage {
+
+    //si el día de mañana quiero migrar a un movil solo debo cambiar localStorage por AsyncStorage
 
     static async save(key, value){
-        return await localStorage.setItem(key,JSON.stringify(value));
+        return localStorage.setItem(key,JSON.stringify(value));
 
     }
     static async get(key) {
-        return await JSON.parse(localStorage.getItem(key));
+        return  JSON.parse(localStorage.getItem(key));
 
     }
     static async remove(key){
-        return await localStorage.removeItem(key);
+        return localStorage.removeItem(key);
     }
 
     static async clear(){
-        return await localStorage.clear();
+        return  localStorage.clear();
     }
 
 
