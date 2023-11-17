@@ -1,4 +1,8 @@
+<h1>
 # PROYECTO FINAL CODO A CODO
+</h1>
+<div>
+    
     1 CREAMOS EL PROYECTO DE REACT CON VITE: Reseteamos App.jsx y los .css
     
     2 Configuramos TEST: Instalamos las dependencia de testing
@@ -33,3 +37,4 @@
     19 INSTALAMOS SWIPER PARA EL CARRUSEL (npm i swiper)
 
 
+</div>
