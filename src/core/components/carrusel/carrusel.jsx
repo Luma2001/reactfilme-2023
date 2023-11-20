@@ -1,27 +1,28 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react' 
+import { useRef } from 'react';
 
 
+export const AppSwiper = ( {children}) => {
+  const swiperElRef = useRef(null);
 
+ 
 
-export default class Carrusel extends React.Component {
+  return (
+    <swiper-container 
+        loop="true" 
+        css-mode="true"
+        ref={swiperElRef}
+        //slides-per-view="5"
+        //grid-rows="3"
+        //mousewheel-force-to-axis="true"
+        navigation="true" //las flechas de avance y retroceso que aparecen en los costados
+      //pagination="true"//puntos que aparecen abajo indicando número de slice
+        //scrollbar="true"
+       
+    >
+        { children }
+        
 
-    render() {
-        return(
-
-            <Swiper className="swiper-container">
-                
-                <SwiperSlide className='slide-item'>1</SwiperSlide>
-
-                <SwiperSlide className='slide-item'>2</SwiperSlide>
-
-                <SwiperSlide className='slide-item'>3</SwiperSlide>
-
-                <SwiperSlide className='slide-item'>4</SwiperSlide>
-
-                <SwiperSlide className='slide-item'>5</SwiperSlide>
-
-            </Swiper>
-        );
-    }
-}
+    </swiper-container>
+  );
+};

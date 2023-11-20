@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../../core/auth/hook/use_auth'
+import AppButton from '../../../core/components/button/app_button';
 
 
 const LoginView = () => {
@@ -26,7 +27,7 @@ const LoginView = () => {
       await login(email,password);
 
     } catch (error) {
-        setError(error.response.data.msg);
+        setError(error);
       
     }  finally{
       setIsLoading(false);
@@ -48,7 +49,7 @@ console.log("estado ", isLoggedIn);
         <form onSubmit={handleSubmit}>
           <input type="email" name='email' placeholder='email'/>
           <input type="password" name='password' placeholder='password'/>
-          <button type='submit' ><h2>Iniciar sesión</h2></button>
+          <AppButton type='submit' ><h2>Iniciar sesión</h2></AppButton>
         </form>
       
         

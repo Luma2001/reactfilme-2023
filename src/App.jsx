@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import { appRouter } from './core/routers/app_router'
 import RootProvider from './core/providers/root_provider';
-import axios from 'axios';
+import { register as registerSwiper } from 'swiper/element/bundle';
 
 
-//
+//proceso de registro de swiper. Utilizamos swiper element
+registerSwiper();
+
+
 const App = () => {
 
-const[data,setData] = useState([]);
 
+/*
+const[data,setData] = useState([]);
 
 const getUsers = async () => {
     const response = await jsonPlaceHolderApi.get("/users");
@@ -18,7 +22,7 @@ const getUsers = async () => {
     setData(response.data);
 };
 
-/*
+
 useEffect(()=>{
    getUsers();
 },[]);

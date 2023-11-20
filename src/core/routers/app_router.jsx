@@ -29,7 +29,7 @@ export const appRouter = createBrowserRouter([
         //Component: LoginView,
     },
 
-    //manejando status 404
+    //manejando status 404: no es realmente un 404. Lo estamos simulando
     {
         path:"*",
         element: <div><h1>Lo sentimos mucho, no se encontró la página</h1></div>

@@ -23,8 +23,8 @@ export const AuthProvider = ({children})=>{
     
     
     const saveLoginState = (state) => {AppStorage.save(AUTH_KEY, state)};
-    const getLoginState = () => AppStorage.get(AUTH_KEY);
-    const removeLoginState = () => AppStorage.remove(AUTH_KEY);
+    const getLoginState = () => {AppStorage.get(AUTH_KEY)};
+    const removeLoginState = () => {AppStorage.remove(AUTH_KEY)};
     
     
 
@@ -48,7 +48,7 @@ export const AuthProvider = ({children})=>{
 
 
 
-    const login = async (email, password) => {
+    const login = async () => {
         /*Se rompe todo
         //Ahora nos comunicamos con el backend
         const response = await authApi.post('/login',{
