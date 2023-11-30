@@ -4,7 +4,7 @@ import { useAuth } from '../../../core/auth/hook/use_auth';
 import AppButton from '../../../core/components/button/app_button';
 import { AppSwiper } from '../../../core/components/carrusel/carrusel';
 import AppSwiperSlide from '../../../core/components/carrusel/components/app_swiperSlide';
-
+import 'swiper/css';
 
 
 const HomeView = () => {

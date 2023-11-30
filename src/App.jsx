@@ -4,7 +4,9 @@ import { RouterProvider } from 'react-router-dom'
 import { appRouter } from './core/routers/app_router'
 import RootProvider from './core/providers/root_provider';
 import { register as registerSwiper } from 'swiper/element/bundle';
-
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 //proceso de registro de swiper. Utilizamos swiper element
 registerSwiper();
