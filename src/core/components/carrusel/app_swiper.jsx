@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 
-export const AppSwiper = () => {
+export const AppSwiper2 = () => {
   const swiperElRef = useRef(null);
 
  

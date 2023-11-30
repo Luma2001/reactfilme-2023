@@ -46,9 +46,10 @@ h1 {
 
 /*ESTILOS DEL CARRUSEL*/
 .swiper-container {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;*/
+  width: 100vw;
   height: 20vh;
 }
 
@@ -62,11 +63,11 @@ h1 {
 }
 
 .slide-item img {
-  object-fit: cover;
+  object-fit:none;
   width: 20%;
 }
 
-/*swiper navigation
+/*swiper pagination
 .swiper-pagination > .swiper-pagination-bullet {
   background-color: #212426;
   opacity: 0.7;

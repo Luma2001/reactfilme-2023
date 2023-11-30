@@ -28,7 +28,7 @@ const HomeView = () => {
 
     <h2>Las Películas más populares</h2> 
     <AppSwiper>
-                 
+                
           {Array.from({ length: 20 }).map((_, index) => (
                 <AppSwiperSlide key={index}>
                   <div
@@ -43,6 +43,7 @@ const HomeView = () => {
                     <h3>Slide {index+1}</h3>
                   </div>
                 </AppSwiperSlide>
+                 
           ))}
 
     </AppSwiper>
