@@ -1,17 +1,39 @@
 import React from 'react';
 import { useAuth } from '../../../core/auth/hook/use_auth';
-
+import { getPopularMovies, getPlayingMovies,getUpcomingMovies } from '../services/movie.services';
+import useSWR from 'swr';
 import AppButton from '../../../core/components/button/app_button';
-import { AppSwiper } from '../../../core/components/carrusel/carrusel';
-import AppSwiperSlide from '../../../core/components/carrusel/components/app_swiperSlide';
 import 'swiper/css';
+import AppCarruselSection from '../../../core/components/app_carrusel_section/app_carrusel_section';
 
 
 const HomeView = () => {
 
+
+  const {
+    data: popularMovies,
+    error: popularMoviesError,
+    isLoading: popularMoviesIsLoading,
+  } = useSWR("getPopularMovies", getPopularMovies);
+
+  const {
+    data: upComingMovies,
+    error: upComingMoviesError,
+    isLoading: upComingMoviesIsLoading,
+  } = useSWR("getUpcomingMovies",getUpcomingMovies);
+
+  const {
+    data: playingMovies,
+    error: playingMoviesError,
+    isLoading: playingMoviesIsLoading,
+  } = useSWR("getPlayingMovies", getPlayingMovies);
+
+
+
   const { logout, isLoggedIn } = useAuth();
 
   console.log("estado ", isLoggedIn);
+  console.log(upComingMovies);
 
   const getUser =async () =>{alert("Hola, Bienvenido Visitante");}
   
@@ -24,73 +46,19 @@ const HomeView = () => {
           <AppButton onClick={getUser}>Saludar</AppButton>
           
           <AppButton onClick={logout}>Cerrar Sesión</AppButton>
+
+          <p><br/></p>
+
+            <AppCarruselSection title={"Las Películas más populares"} data={popularMovies}/>
+            <p><br/></p>
+            <AppCarruselSection title={"Novedades: agregadas recientemente"} data={upComingMovies}/>
+            <p><br/></p>
+            <AppCarruselSection title={"Continuar viendo"} data={playingMovies}/>
+
+            
     </div>
 
-    <h2>Las Películas más populares</h2> 
-    <AppSwiper>
-                
-          {Array.from({ length: 20 }).map((_, index) => (
-                <AppSwiperSlide key={index}>
-                  <div
-                    style={{
-                      height:"150px",
-                      width: "250px",
-                      backgroundColor: "yellowgreen"
-                    }}
-                  
-                  
-                  >
-                    <h3>Slide {index+1}</h3>
-                  </div>
-                </AppSwiperSlide>
-                 
-          ))}
-
-    </AppSwiper>
-
-
-    <h2>Recomendaciones para tí</h2> 
-    <AppSwiper>
-                 
-          {Array.from({ length: 20 }).map((_, index) => (
-                <AppSwiperSlide key={index}>
-                  <div
-                    style={{
-                      height:"150px",
-                      width: "250px",
-                      backgroundColor: "yellowgreen"
-                    }}
-                  
-                  
-                  >
-                    <h3>Slide {index+1}</h3>
-                  </div>
-                </AppSwiperSlide>
-          ))}
-          
-    </AppSwiper>
-
-
-    <h2>Películas Recientemente Agregadas</h2> 
-    <AppSwiper>
-                 
-          {Array.from({ length: 20 }).map((_, index) => (
-                <AppSwiperSlide key={index}>
-                  <div
-                    style={{
-                      height:"150px",
-                      width: "250px",
-                      backgroundColor: "yellowgreen"
-                    }}
-                  
-                  
-                  >
-                    <h3>Slide {index+1}</h3>
-                  </div>
-                </AppSwiperSlide>
-          ))}
-          
-    </AppSwiper>
+    
 
     </>
   )
